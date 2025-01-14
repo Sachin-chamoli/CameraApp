@@ -117,7 +117,8 @@ const CameraRollScreen = () => {
       flex: 1,
     }}
     >
-      <View style={styles.header}>
+ {/* <Text>hiii</Text> */}
+ <View style={styles.header}>
         <TouchableOpacity onPress={() => Nav.goBack()} style={{width : responsiveWidth(8) , height : responsiveWidth(8) , justifyContent : 'center', alignItems : 'center'}}>
           <AntDesign name={'left'} color={'black'} size={responsiveFontSize(3)}/>
         </TouchableOpacity>
@@ -127,7 +128,7 @@ const CameraRollScreen = () => {
         </TouchableOpacity>
       </View>
 
-      <View style={{height: '60%', alignItems: 'center'}}>
+<View style={{height: '60%', alignItems: 'center', borderWidth:1 , position : 'relative'}}>
         {device && (
           <Camera
             ref={camera}
@@ -149,6 +150,7 @@ const CameraRollScreen = () => {
             bottom: 20,
           }}></TouchableOpacity>
       </View>
+   
       <View style={{ marginVertical : responsiveWidth(7) , flex : 1}}>
         <Text style={{fontSize : responsiveFontSize(2) , alignSelf  :'center'}}>Gallery</Text>
         <FlatList
@@ -159,6 +161,9 @@ const CameraRollScreen = () => {
           style={{marginVertical: responsiveWidth(3) , paddingLeft : responsiveWidth(2)}}
         />
       </View>
+
+     
+         
 
 
       <Modal visible={showPhoto != null} transparent={true} animationType="slide">
